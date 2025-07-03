@@ -1,5 +1,5 @@
 <!-- 
-This example shows how to load data client and/or server side (a.k.a. in the browser).
+This example shows how to load data client side (a.k.a. in the browser).
 It uses `fetch()` inside the `+page.js` file to load a static json file. 
 See: https://svelte.dev/docs/kit/load
 -->
