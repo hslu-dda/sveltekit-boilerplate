@@ -1,6 +1,7 @@
 <!-- 
 This is an example that shows how D3 can be used with Svelte
 Based on the official D3 Documentation: https://d3js.org/getting-started#d3-in-svelte 
+Note: This runs in legacy mode as it uses $: reactive statements from Svelte4, see here: https://svelte.dev/blog/runes
 -->
 <script>
     // import the d3 library
@@ -25,7 +26,10 @@ Based on the official D3 Documentation: https://d3js.org/getting-started#d3-in-s
     let h = 6;
 
     // define the dynamic y-pos with a d3 scale
-    $: y = d3.scaleLinear([0, vizData.length - 1], [marginTop, height - marginBottom]);
+    $: y = d3.scaleLinear(
+        [0, vizData.length - 1],
+        [marginTop, height - marginBottom]
+    );
 
     // define the dynamic width of the bars based on minMax
     let minMax = d3.extent(vizData, (d) => d.value);
@@ -47,7 +51,13 @@ Based on the official D3 Documentation: https://d3js.org/getting-started#d3-in-s
                     stroke="none"
                 ></rect>
                 <!-- Add a text label -->
-                <text x={w(d.value) + 5} y={y(i) + 6} fill="black" stroke="none" font-size="10">{d.label}, {d.value}</text>
+                <text
+                    x={w(d.value) + 5}
+                    y={y(i) + 6}
+                    fill="black"
+                    stroke="none"
+                    font-size="10">{d.label}, {d.value}</text
+                >
             {/each}
         </g>
     </svg>
