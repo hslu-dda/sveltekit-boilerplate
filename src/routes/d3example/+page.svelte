@@ -62,5 +62,4 @@ Note: This runs in legacy mode as it uses $: reactive statements from Svelte4, s
         </g>
     </svg>
 </div>
-<p class="p-2">A D3 Sketch</p>
 <a class="p-2 underline" href="/">back</a>
