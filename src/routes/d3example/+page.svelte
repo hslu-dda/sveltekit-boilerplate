@@ -2,6 +2,8 @@
 This is an example that shows how D3 can be used with Svelte
 Based on the official D3 Documentation: https://d3js.org/getting-started#d3-in-svelte 
 Note: This runs in legacy mode as it uses $: reactive statements from Svelte4, see here: https://svelte.dev/blog/runes
+
+In a project the content of this file is likely moved to a library component
 -->
 <script>
     // import the d3 library
