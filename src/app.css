@@ -21,8 +21,14 @@
     --font-mono: 'Everett-Mono', monospace;
 
     /* Font Sizes */
-    --text-md: '22.5px';
-    --text-md--line-height: '27px';
+    --text-xl: 4rem;
+    --text-xl--line-height: 1;
+    --text-lg: 2.5rem;
+    --text-lg--line-height: 1;
+    --text-md: 22.5px;
+    --text-md--line-height: 27px;
+    --text-sm: 15px;
+    --text-sm--line-height: 18px;
 
 }
 
