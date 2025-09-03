@@ -1,2 +1,33 @@
 @import "tailwindcss";
 
+/* Import Custom Font from /static/fonts/.. */
+/* @font-face {
+    font-family: 'Everett-Regular';
+    src: url('fonts/Everett-Regular-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+/* Customize Tailwind CSS */
+@theme {
+    /* Colors */
+    --color-primary: rgb(178, 11, 255);
+
+    /* Create the variable text-sans */
+    /* --font-sans: 'Everett-Regular', 'Helvetica', sans-serif; */
+    /* Fonts */
+    --font-sans: 'Everett-Regular', 'Helvetica', sans-serif;
+    --font-medium: 'Everett-Medium', 'Helvetica', sans-serif;
+    --font-mono: 'Everett-Mono', monospace;
+
+    /* Font Sizes */
+    --text-md: '22.5px';
+    --text-md--line-height: '27px';
+
+}
+
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
