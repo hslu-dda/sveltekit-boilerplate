@@ -9,20 +9,20 @@ This is an example of a p5 Sketch. You need to use the P5 Instance Mode:
 // Import variables from the store
 import { colorString } from "$lib/store";
 
-export default function (p) {
+// set a default to avoid breaking the program
+// this should be overwriten by the store variable
+let bgColor = "pink";
+colorString.subscribe((value) => {
+    bgColor = value;
+});
 
-    // set a default to avoid breaking the program 
-    // this should be overwriten by the store variable
-    let bgColor = 'pink';
-    colorString.subscribe((value) => {
-        bgColor = value;
-    })
-    // you can now also change the store variable with 
+export default function (p) {
+    // you can now also change the store variable with
     // colorString.set("some color")
     // for example
     p.mousePressed = () => {
-        colorString.set("black")
-    }
+        colorString.set("black");
+    };
 
     let x = 200;
     let y = 200;

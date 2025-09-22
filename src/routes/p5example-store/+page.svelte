@@ -18,7 +18,6 @@
 
     // define a placeholer for the input field
     let newColorString = "blue";
-
     // when some input is there & ENTER is pressed, update the store value
     function setNewColorString() {
         colorString.set(newColorString);
