@@ -17,7 +17,12 @@ export default function (p) {
     colorString.subscribe((value) => {
         bgColor = value;
     })
-    console.log(colorString)
+    // you can now also change the store variable with 
+    // colorString.set("some color")
+    // for example
+    p.mousePressed = () => {
+        colorString.set("black")
+    }
 
     let x = 200;
     let y = 200;
