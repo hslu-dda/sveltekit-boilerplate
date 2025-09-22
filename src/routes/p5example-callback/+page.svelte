@@ -34,4 +34,4 @@
 <div id="p5-container" bind:this={container}></div>
 
 <a class="p-2 underline" href="/">back</a>
-<p> Ball Position X: {sketchData.x}, Y: {sketchData.y} </p>
+<p class="pl-2"> Ball Position X: {sketchData.x}, Y: {sketchData.y} </p>
