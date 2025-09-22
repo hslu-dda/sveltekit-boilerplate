@@ -7,9 +7,14 @@ This is an example of a p5 Sketch. You need to use the P5 Instance Mode:
 
 */
 export default function (p, { onUpdate } = {}) {
-    // a variable emit to send the data from the sketch back
-    // just use emit({x: 100, y: 100}) for example
-    const emit = onUpdate ?? (() => {});
+    // a variable sendDataUp to send the data from the sketch back
+    // just use sendDataUp({x: 100, y: 100}) for example
+    let sendDataUp;
+    if (onUpdate !== null && onUpdate !== undefined) {
+        sendDataUp = onUpdate;
+    } else {
+        sendDataUp = () => {};
+    }
 
     let x = 200;
     let y = 200;
@@ -23,7 +28,6 @@ export default function (p, { onUpdate } = {}) {
     };
 
     p.draw = () => {
-        
         p.background("green");
         p.noStroke();
         p.fill(255, 0, 0);
@@ -38,6 +42,6 @@ export default function (p, { onUpdate } = {}) {
         }
 
         // send dynamic data back up
-        emit({x: x, y: y})
+        sendDataUp({ x: x, y: y });
     };
 }
