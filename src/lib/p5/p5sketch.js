@@ -7,6 +7,20 @@ This is an example of a p5 Sketch. You need to use the P5 Instance Mode:
 
 */
 export default function (p) {
+
+    // // keep all sketch variables that need to be changed by svelte here
+    let state = {
+        bgColor: "yellow"
+    };
+
+    // a custom method created for the p object (p5 sketch) 
+    // to handle changing variables from the svelte component
+    // this updates the state from above
+    p.setVariables = (key, value) => {
+        console.log("Setting", key, value);
+        state[key] = value;
+    };
+
     let x = 200;
     let y = 200;
     let xspeed = 5;
@@ -20,7 +34,7 @@ export default function (p) {
 
     p.draw = () => {
         
-        p.background(200);
+        p.background(state.bgColor);
         p.noStroke();
         p.fill(255, 0, 0);
         p.ellipse(x, y, r * 2, r * 2);
