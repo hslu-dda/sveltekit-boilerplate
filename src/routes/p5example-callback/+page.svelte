@@ -21,6 +21,7 @@
         const p5 = p5Module.default;
 
         // create a new p5 instance & send the update function
+        // you need to pass the function that receives the data from the sketch
         p5Instance = new p5((p) => mySketch(p, { onUpdate: getSketchData }), container);
     });
 
